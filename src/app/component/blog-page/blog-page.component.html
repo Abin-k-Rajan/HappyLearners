@@ -1,0 +1,11 @@
+<div *ngIf="property.link_id" class="card" style="padding: 20px;">
+  <h2>{{property._title}}</h2>
+  <h5>{{property._description}}</h5>
+  <!--<div class="fakeimg" style="height:200px;">Image</div>-->
+  <p>{{property._blog_name}}</p>
+  <p class="content">{{property._content}}</p>
+  <a (click)="updateViews()" *ngIf="property.link_id" routerLink="blog-read/{{property.link_id}}" style="width: max-content;">Read more..
+  </a>
+</div>
+  
+  

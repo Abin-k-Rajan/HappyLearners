@@ -1,0 +1,30 @@
+<div class="spinner" *ngIf="!blogs">
+  <mat-spinner style="position: absolute; top: 50%; left: 50%;" color="primary" value='66' diameter="45"></mat-spinner>
+  </div>
+
+
+<div *ngIf="first" class="alert alert-primary " role="alert">
+  This is the latest blog, Keep reading we are getting new contents...
+</div>
+
+<div *ngIf="last" class="alert alert-primary" role="alert">
+  You have come to our very first blog, Hope you like it...
+</div>
+
+<div class="alert-box"></div>
+
+<div style="min-height: 80vh;" class="leftcolumn">
+    <div class="app-blog" *ngFor="let blog of blogs">
+      <app-blog-page [property]="blog"></app-blog-page>
+    </div>
+</div>
+
+<div class="spinner" *ngIf="!loading">
+  <mat-spinner color="primary" value='66' diameter="45"></mat-spinner>
+</div>
+
+
+<div class="buttons">
+  <button (click)="getPrevPage()" class="button button2">PREV</button>
+  <button (click)="getNextPage()" class="button button2">NEXT</button>
+</div>

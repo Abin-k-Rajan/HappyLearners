@@ -1,0 +1,22 @@
+.image_content {
+    max-width: 70%;
+    min-width: 70%;
+    align-content: center;
+    width: fit-content;
+}
+
+.body_page{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+
+.tab-panel{
+    margin: 3%;
+}
+
+.spinner{
+    width: 100%;
+    position: absolute; top: 50%; left: 50%;
+}

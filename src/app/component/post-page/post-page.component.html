@@ -1,0 +1,83 @@
+
+<h3 style="margin-left: 100px; margin-bottom: 20px;">POST BLOG IN DATABASE</h3>
+<p style="margin-left: 110px; margin-bottom: 20px;">Please note this page is only for authorized users!</p>
+
+<div *ngIf="this.loggedIn" class="container loginForm">
+  <h6>AUTHENTICATION</h6>
+  <p *ngIf="this.login_fail" style="color: red;">User Credentials did not match!! Please note this page can only be accessed by admin.</p>
+  <form (ngSubmit)="onLogin()" [formGroup]="this.validatorForm">
+    <label for="fname">Email</label>
+    <input type="email" id="fmail" formControlName="Email" placeholder="Email..">
+
+    <label for="fname">Password</label>
+    <input type="password" id="fpass" formControlName="Password" placeholder="Password..">
+    <input class="alert-box" style="text-align: center;" type="Submit" value="Login">
+    <div class="spinner" *ngIf="this.signIn">
+      <mat-spinner style="position: absolute; top: 50%; left: 50%;" color="primary" value='66' diameter="45"></mat-spinner>
+    </div>
+  </form>
+</div>
+
+
+<div *ngIf="!this.loggedIn" class="container">
+  <h6>BLOG CONTENT</h6>
+  <form (ngSubmit)="onSubmit()" [formGroup]="this.postBlogForm">
+    
+    <label for="fname">Title</label>
+    <input type="text" id="ftitle" name="Title" formControlName="title" placeholder="Blog Title..">
+
+    <label for="fname">Description</label>
+    <input type="text" id="fdesc" name="Description" formControlName="description" placeholder="Description..">
+
+    <label for="fname">Image Url</label>
+    <input type="text" id="fimg" name="Image Url" formControlName="image_url"  placeholder="Image Url..">
+    <br>
+    <br>
+
+
+    <label for="subject">Content</label>
+    <textarea id="subject" name="subject" placeholder="Content.." formControlName="content"  style="height:200px"></textarea>
+
+    <label for="subject">Code CPP</label>
+    <textarea id="codecpp" name="subject" placeholder="Code CPP.." formControlName="code_cpp"  style="height:200px"></textarea>
+
+    <label for="subject">Code Java</label>
+    <textarea id="codejava" name="subject" placeholder="Code Java.." formControlName="code_java"  style="height:200px"></textarea>
+
+    <label for="subject">Code Python</label>
+    <textarea id="codepython" name="subject" placeholder="Code Python.." formControlName="code_python"  style="height:200px"></textarea>
+  </form>
+
+    <br>
+    <br>
+  <br>
+  <hr>
+  <br>  
+  <form [formGroup]="paragraphForm">
+
+    <h6>MAIN CONTENT</h6>
+    <br>
+    <div
+    formArrayName="items"
+    *ngFor="let item of counter(this.number_of_para); let i = index;"
+    >
+    <div [formGroupName]="i">
+      <label for="fname">Para</label>
+      <input type="text" id="fdesc" name="paragraph" formControlName="paragraph" placeholder="paragraph..">
+
+      <label for="fname">Image</label>
+      <input type="text" id="fimg" name="images" formControlName="images"  placeholder="Image">
+    </div>
+    <br>
+  </div>
+    <div style="display: inline; text-align: center; align-items: center;">
+    <button (click)="addItem()" class="button button2">ADD</button>
+    <button (click)="removePara()" class="button button2 remove">REMOVE</button>
+    </div>
+    <br>
+    <hr>
+    <button (click)="onSubmit()" class="button button2 Submit">SUBMIT</button>
+  </form>
+
+    <br>
+</div>

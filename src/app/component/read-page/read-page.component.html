@@ -1,0 +1,66 @@
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<div class="body_page">
+<div class="spinner" *ngIf="!property.content">
+<mat-spinner color="primary" value='66' diameter="45"></mat-spinner>
+</div>
+
+<div *ngIf="property.content" style="padding: 20px;">
+  <h5>{{property.description}}</h5>
+  <h2>{{property.title}}</h2>
+  <br>
+  <br>
+  <!--<div class="fakeimg" style="height:200px;">Image</div>-->
+  <h4 *ngIf="property.content">Here's Some Theory!</h4>
+  <div style="margin-left: 10px;"  [innerHTML]="property.content"></div>
+  <br>
+  <br>
+
+  <div *ngIf="property.image_url" style="align-content: center; align-items: center; text-align: center;">
+    <img class="image_content" src="{{property.image_url}}">
+  </div>
+  <br>
+  <br>
+  <div class="para">
+    <div *ngFor="let item of property.paragraph; let i = index">
+      <br>
+      <p>{{property.paragraph[i]}}</p>
+      <br>
+      <div *ngIf="property.images[i]" style="align-content: center; align-items: center; text-align: center;">
+        <img class="image_content" src="{{property.images[i]}}">
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="tab-panel">
+    <tabset class="member-tabset">
+      <tab *ngIf="property.code_cpp" heading="CPP">
+      <pre class="prettyprint">
+        <code class="language-cpp">
+          <div [innerHTML]="property.code_cpp"></div>
+        </code>
+      </pre>
+      </tab>
+
+      <tab *ngIf="property.code_java" heading="Java">
+      <pre class="prettyprint">
+        <code class="language-java">
+          <div [innerHTML]="property.code_java"></div>
+        </code>
+      </pre>
+      </tab>
+
+
+      <tab *ngIf="property.code_python" heading="Python">
+      <pre class="prettyprint">
+        <code class="language-python">
+          <div [innerHTML]="property.code_python"></div>
+        </code>
+      </pre>
+      </tab>
+    </tabset>
+  </div>
+    <a *ngIf="property.content" routerLink="" style="width: max-content;">Home</a>
+  </div>
+</div>
+    
+    

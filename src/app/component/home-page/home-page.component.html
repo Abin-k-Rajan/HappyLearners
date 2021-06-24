@@ -1,0 +1,51 @@
+<header>
+    <div class="home-heading">
+        <h1>HAPPY LEARNERS</h1>
+        <p>New to coding? Follow these blogs to stat your coding career.</p>
+    </div>
+    
+    <img class="home-image" src="../assets/images/homeImage2.jpg"/>
+</header>
+
+<div>
+    <div class="blog-head">
+        <h2>LATEST BLOGS</h2>
+        <p>Last Updated on date</p>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+          <div style="margin: 50%;" class="spinner" *ngIf="!blogs">
+            <mat-spinner color="primary" value='66' diameter="45"></mat-spinner>
+          </div>
+            <div class="app-blog" *ngFor="let blog of blogs">
+              <app-blog-page [property]="blog"></app-blog-page>
+            </div>
+        </div>
+    <div class="rightcolumn">
+        <div class="card">
+          <h2>WHAT'S NEW??</h2>
+          <div class="fakeimg" style="height:200px;">
+                <img src="../assets/images/homeImage2.jpg"/>
+            </div>
+            <div *ngFor="let fact of whats_new">
+          <p>{{fact.info}}</p>
+        </div>
+        </div>
+        <div class="card">
+          <h3>Popular Post</h3>
+          <br>
+          <div *ngFor="let blog of popular_blogs">
+            <a *ngIf="blog.link_id" routerLink="blog-read/{{blog.link_id}}" style="width: max-content;"><h6 class="content">{{blog._title}}</h6>
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Follow Me</h3>
+          <a href="https://www.linkedin.com/in/abin-k-732a18136/" target="_blank" rel="noopener noreferrer" style="width: max-content;"><h6 class="content">linkedin</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+
+</div>

@@ -1,0 +1,13 @@
+.blog-button{
+    border-radius: 5px;
+    border-color: transparent;
+    border-width: 0px;
+    height: 50px;
+}
+
+.content
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
