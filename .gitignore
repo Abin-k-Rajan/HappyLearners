@@ -10,8 +10,8 @@
 # dependencies
 /node_modules
 /environments
-/src/assets/images
-/src/data
+/images
+/data
 
 
 # profiling files
