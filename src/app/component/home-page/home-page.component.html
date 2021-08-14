@@ -4,10 +4,10 @@
         <p>New to coding? Follow these blogs to stat your coding career.</p>
     </div>
     
-    <img class="home-image" src="../assets/images/homeImage2.jpg"/>
+    <img class="home-image" src="https://images.pexels.com/photos/4884118/pexels-photo-4884118.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
 </header>
 
-<div>
+<div style="margin: 20px;"> 
     <div class="blog-head">
         <h2>LATEST BLOGS</h2>
         <p>Last Updated on date</p>
@@ -15,8 +15,8 @@
 
     <div class="row">
         <div class="leftcolumn">
-          <div style="margin: 50%;" class="spinner" *ngIf="!blogs">
-            <mat-spinner color="primary" value='66' diameter="45"></mat-spinner>
+          <div style="position: sticky; top: 50%; width: 100%;" class="spinner" *ngIf="!blogs">
+            <mat-spinner style="position: absolute; left: 50%;" color="primary" value='66' diameter="45"></mat-spinner>
           </div>
             <div class="app-blog" *ngFor="let blog of blogs">
               <app-blog-page [property]="blog"></app-blog-page>
@@ -24,16 +24,7 @@
         </div>
     <div class="rightcolumn">
         <div class="card">
-          <h2>WHAT'S NEW??</h2>
-          <div class="fakeimg" style="height:200px;">
-                <img src="../assets/images/homeImage2.jpg"/>
-            </div>
-            <div *ngFor="let fact of whats_new">
-          <p>{{fact.info}}</p>
-        </div>
-        </div>
-        <div class="card">
-          <h3>Popular Post</h3>
+          <h3>POPULAR BLOGS</h3>
           <br>
           <div *ngFor="let blog of popular_blogs">
             <a *ngIf="blog.link_id" routerLink="blog-read/{{blog.link_id}}" style="width: max-content;"><h6 class="content">{{blog._title}}</h6>
@@ -41,9 +32,29 @@
           </div>
         </div>
         <div class="card">
-          <h3>Follow Me</h3>
+          <h3>FOLLOW ME</h3>
           <a href="https://www.linkedin.com/in/abin-k-732a18136/" target="_blank" rel="noopener noreferrer" style="width: max-content;"><h6 class="content">linkedin</h6>
           </a>
+          <a href="https://www.instagram.com/abin_k_rajan/" target="_blank" rel="noopener noreferrer" style="width: max-content;"><h6 class="content">Instagram</h6>
+          </a>
+        </div>
+
+        <div class="card">
+          <h3>PROJECTS</h3>
+          <div *ngFor="let project of projects">
+            <a href="{{project._git_link}}" target="_blank" rel="noopener noreferrer" style="width: max-content;"><h6 class="content">{{project._name}}</h6>
+            </a>
+            <p>{{project._description}}</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>WHAT'S NEW??</h3>
+          <div *ngFor="let fact of whats_new">
+            {{fact.info}}
+            <a href="{{fact.url}}" target="_blank" rel="noopener noreferrer">Read more...</a>
+            <br>
+          </div>
         </div>
       </div>
     </div>

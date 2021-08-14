@@ -1,7 +1,7 @@
 import {NumberSymbol} from '@angular/common';
 
 export interface Iblog {
-    _id: any,
+    _id: any;
     _title: string;
     _description: string;
     _image_url: string;

@@ -25,13 +25,7 @@ export class BlogListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getBlogWeb.getAllBlogs().subscribe(
-    //   data => {
-    //     this.blogs = data;
-    //   }
-    // ) 
-
-    //  Function to get blogs from firebase
+    window.scrollTo(0, 0)
     this.getBlogWeb.getBlogsFromFireBase().subscribe(
       data => {
         this.loading = "loaded";

@@ -41,6 +41,7 @@
     width: 100%;
     text-align: center;
     background-color: #FFE8F7;
+    margin-top: 10vh;
 }
 
 .search-bar i{
@@ -86,6 +87,9 @@ input{
     float: none;
   }
 
+
+
+
   .topnav input[type=text], .topnav .search-container button {
     float: none;
     display: block;
@@ -97,4 +101,71 @@ input{
 
   .search-container {
     float: right;
+  }
+
+
+
+
+
+
+  .mobile-container {
+    max-width: 480px;
+    margin: auto;
+    height: 500px;
+    border-radius: 10px;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    position: sticky;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+    position: sticky;
+  }
+  
+  .topnav a {
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    display: block;
+    size: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav a:hover{
+      background-color: #F1F1f1;
+  }
+  
+  
+.topnav
+{
+    display: none;
+    visibility: none;
+    opacity: 0;
+}
+
+
+  @media only screen and (max-width: 600px)
+  {
+      .nav{
+          display: none;
+          visibility: none;
+          opacity: 0;
+      }
+
+      .topnav
+      {
+        display: block;
+        position: sticky;
+        visibility: visible;
+        opacity: 1;
+      }
   }

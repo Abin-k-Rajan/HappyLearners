@@ -21,6 +21,7 @@ export class ReadPageComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0)
     this.id = this.route.snapshot.params['id'];
     this.route.params.subscribe(
       (params) => {

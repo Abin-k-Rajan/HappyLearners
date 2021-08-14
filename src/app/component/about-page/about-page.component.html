@@ -3,51 +3,37 @@
 
 <div class="about-section">
   <h1 style="margin-top: 30px;">ABOUT US</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
+  <p>We work together to get you the best content out there.</p>
+  <h4>What makes us great?</h4>
 </div>
 
 <h1 style="text-align:center; margin: 40px;">OUR TEAM</h1>
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="../assets/images/person.jpg" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Jane Doe</h2>
-        <p class="title">CEO & Founder</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>jane@example.com</p>
-      </div>
-    </div>
-  </div>
 
-  <div class="column">
-    <div class="card">
-      <img src="../assets/images/person.jpg" alt="Mike" style="width:100%">
-      <div class="container">
-        <h2>Mike Ross</h2>
-        <p class="title">Art Director</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>mike@example.com</p>
+
+<div *ngFor="let about of about_content">
+  <div class="card">
+    <div class="row" style="padding: 20px;">
+      <div class="column">
+          <img src="{{about._image_url}}" alt="Jane" class="about-image" style="width:100%; max-height: 40vh">
       </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="../assets/images/person.jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>John Doe</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>john@example.com</p>
+
+      <div class="rightcolumn">
+          <div class="container">
+            <h2>{{about._name}}</h2>
+            <h5 class="title">{{about._role}}</h5>
+            <p class="title">{{about._specialization}}</p>
+            <p>{{about._cover}}</p>
+          </div>
       </div>
     </div>
   </div>
 </div>
 
 
-<h2 style="margin-left: 30px;">SPECIAL THANKS TO</h2>
+<h2 style="margin: 40px;">SPECIAL THANKS TO</h2>
+
+
+
 <div class="card" style="padding: 20px;">
 <div class="row">
     <div class="leftcolumn">
@@ -78,5 +64,3 @@
     </div>
 </div>
 </div>
-
-<a href="../post-content" style="width: max-content;">Post Content..</a>

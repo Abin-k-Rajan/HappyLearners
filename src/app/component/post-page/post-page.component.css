@@ -35,6 +35,17 @@ input[type=password], select, textarea {
   resize: vertical;
 }
 
+input[type=file] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
 input[type=submit] {
   background-color: #04AA6D;
   color: white;
@@ -48,15 +59,20 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
+input[type=radio] {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
 }
 
-.container loginForm {
+.container .loginForm {
   max-width: 50%;
-  
+  margin: 100px;
 }
 
 
@@ -107,4 +123,39 @@ input[type=submit]:hover {
 {
   background-color: #df3333;
   color: white;
+}
+
+.file-button{
+  cursor: pointer;
+}
+
+.url{
+  
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.heading{
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 600px)
+{
+  .container{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .heading{
+    position: relative;
+    text-align: center;
+    margin: 0px;
+  }
+
+  .heading p{
+    visibility: none;
+    opacity: 0;
+  }
 }

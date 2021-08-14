@@ -10,14 +10,17 @@ body {
   
   .column {
     float: left;
-    width: 33.3%;
+    width: 40%;
     margin-bottom: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
     padding: 0 8px;
   }
   
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
+    margin: 20px;
   }
   
   .about-section {
@@ -57,15 +60,8 @@ body {
   .button:hover {
     background-color: #555;
   }
-  
-  @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
-    }
-  }
 
-  .leftcolumn {   
+    .leftcolumn {   
     float: left;
     width: 40%;
   }
@@ -75,4 +71,32 @@ body {
     float: left;
     width: 60%;
     padding-left: 20px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      float: left;
+      width: 100%;
+    }
+
+    .leftcolumn {   
+      float: left;
+      width: 100%;
+    }
+    
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 100%;
+    }
+  }
+
+
+
+  .about-image{
+    max-width: 60%;
+    max-height: 40vh;
+    display: flex;
+    justify-content: center;
+    border-radius: 200px;
   }

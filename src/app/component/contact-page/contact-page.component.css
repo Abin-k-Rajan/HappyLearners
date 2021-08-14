@@ -31,3 +31,12 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+.maintainance{
+  position: sticky;
+  opacity: 0.5;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  background-color: #04AA6D;
+}

@@ -1,8 +1,15 @@
+<div class="spinner" *ngIf="this.loading" style="position: sticky; top: 50%; width: 100%;">
+  <mat-spinner style="position: absolute; left: 50%;" color="primary" value='66' diameter="45">Hold On</mat-spinner>
+</div>
 
-<h3 style="margin-left: 100px; margin-bottom: 20px;">POST BLOG IN DATABASE</h3>
-<p style="margin-left: 110px; margin-bottom: 20px;">Please note this page is only for authorized users!</p>
+<div class="heading">
+  <h3>POST BLOG IN DATABASE</h3>
+  <p>Please note this page is only for authorized users!</p>
+</div>
 
-<div *ngIf="this.loggedIn" class="container loginForm">
+
+
+<div *ngIf="!this.loggedIn" class="container loginForm">
   <h6>AUTHENTICATION</h6>
   <p *ngIf="this.login_fail" style="color: red;">User Credentials did not match!! Please note this page can only be accessed by admin.</p>
   <form (ngSubmit)="onLogin()" [formGroup]="this.validatorForm">
@@ -12,14 +19,11 @@
     <label for="fname">Password</label>
     <input type="password" id="fpass" formControlName="Password" placeholder="Password..">
     <input class="alert-box" style="text-align: center;" type="Submit" value="Login">
-    <div class="spinner" *ngIf="this.signIn">
-      <mat-spinner style="position: absolute; top: 50%; left: 50%;" color="primary" value='66' diameter="45"></mat-spinner>
-    </div>
   </form>
 </div>
 
 
-<div *ngIf="!this.loggedIn" class="container">
+<div *ngIf="this.loggedIn" class="container">
   <h6>BLOG CONTENT</h6>
   <form (ngSubmit)="onSubmit()" [formGroup]="this.postBlogForm">
     
@@ -29,8 +33,18 @@
     <label for="fname">Description</label>
     <input type="text" id="fdesc" name="Description" formControlName="description" placeholder="Description..">
 
-    <label for="fname">Image Url</label>
-    <input type="text" id="fimg" name="Image Url" formControlName="image_url"  placeholder="Image Url..">
+    <label for="fname">Blog Image</label>
+    <br>
+    <input 
+      type="file" 
+      id="fimg" 
+      name="image_url" 
+      formControlName="image_url"  
+      placeholder="Image Url.." 
+      class="file-button"  
+      accept="image/png, image/gif, image/jpeg"
+      (change)="upload_image_task_main_image($event)"
+    >
     <br>
     <br>
 
@@ -53,6 +67,8 @@
   <br>
   <hr>
   <br>  
+
+
   <form [formGroup]="paragraphForm">
 
     <h6>MAIN CONTENT</h6>
@@ -61,23 +77,82 @@
     formArrayName="items"
     *ngFor="let item of counter(this.number_of_para); let i = index;"
     >
+
+
+
     <div [formGroupName]="i">
       <label for="fname">Para</label>
-      <input type="text" id="fdesc" name="paragraph" formControlName="paragraph" placeholder="paragraph..">
+      <textarea id="paragraph" placeholder="Enter blog.." formControlName="paragraph"  style="height:200px"></textarea>
 
-      <label for="fname">Image</label>
-      <input type="text" id="fimg" name="images" formControlName="images"  placeholder="Image">
+      <br>
+      <label>Upload a new image</label>
+      
+      <br>
+        <input 
+          type="file" 
+          id="image-file-upload" 
+          name="image_file" 
+          class="file-button"  
+          accept="image/png, image/gif, image/jpeg" 
+          (change)="upload_image_change($event, i)"
+        >
+      <br>
+
+      <hr>
     </div>
     <br>
   </div>
+
+
     <div style="display: inline; text-align: center; align-items: center;">
     <button (click)="addItem()" class="button button2">ADD</button>
     <button (click)="removePara()" class="button button2 remove">REMOVE</button>
     </div>
     <br>
-    <hr>
+
+    <br>
     <button (click)="onSubmit()" class="button button2 Submit">SUBMIT</button>
   </form>
 
     <br>
+    <hr>
+
+
+    
+    <form [formGroup]="infoBlogForm">
+      <label for="fname">Title</label>
+      <input 
+        type="text"
+        id="title" 
+        placeholder="Title" 
+        formControlName="_title"  
+      />
+
+      <label for="fname">Description</label>
+      <input 
+        type="text"
+        id="description" 
+        placeholder="Description" 
+        formControlName="_description"  
+      />
+
+
+      <label for="fname">Blog Name</label>
+      <input 
+        type="text"
+        id="blogName" 
+        placeholder="Blog Name" 
+        formControlName="_blog_name"  
+      />
+
+      <label for="fname">Content</label>
+      <input 
+        type="text"
+        id="content" 
+        placeholder="Blog Content" 
+        formControlName="_content"  
+      />
+      <br>
+      <button (click)="onSubmitInfo()" class="button button2 Submit">SAVE</button>
+    </form>
 </div>

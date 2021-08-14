@@ -20,3 +20,29 @@
     width: 100%;
     position: absolute; top: 50%; left: 50%;
 }
+
+@media screen and (max-width: 768px)
+{
+    .member-tabset{
+        background-color: black;
+    }
+}
+
+
+@media only screen and (max-width: 600px)
+{
+    .image_content{
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 960px)
+{
+    .image_content{
+        min-width: 90%;
+        max-width: 90%;
+    }
+}
+
