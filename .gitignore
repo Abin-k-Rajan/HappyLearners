@@ -23,6 +23,7 @@ speed-measure-plugin*.json
 .project
 .firebaserc
 .classpath
+.firebase.json
 .c9/
 *.launch
 .settings/
