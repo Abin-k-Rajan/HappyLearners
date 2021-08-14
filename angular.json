@@ -23,7 +23,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/data",
-              "./assets/images/homeImage2.jpg"
+              "src/assets/images/homeImage2.jpg"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
