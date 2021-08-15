@@ -61,7 +61,7 @@ body {
     background-color: #555;
   }
 
-    .leftcolumn {   
+  .leftcolumn {   
     float: left;
     width: 40%;
   }
@@ -71,6 +71,31 @@ body {
     float: left;
     width: 60%;
     padding-left: 20px;
+  }
+
+
+  .about-image{
+    max-width: 60%;
+    max-height: 40vh;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+
+
+  @media screen and (max-width: 960px)
+  {
+    .about-image{
+      max-width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 960px)
+  {
+    .about-image{
+      max-width: 100%;
+    }
   }
   
   @media screen and (max-width: 600px) {
@@ -89,14 +114,12 @@ body {
       float: left;
       width: 100%;
     }
-  }
 
+    .container{
+      padding: 0;
+    }
 
-
-  .about-image{
-    max-width: 60%;
-    max-height: 40vh;
-    display: flex;
-    justify-content: center;
-    border-radius: 200px;
+    .about-image{
+      max-width: 90%;
+    }
   }

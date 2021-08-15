@@ -11,6 +11,11 @@
 }
 
 
+.heading{
+    text-align: left;
+}
+
+
 
 .tab-panel{
     margin: 3%;
@@ -21,10 +26,17 @@
     position: absolute; top: 50%; left: 50%;
 }
 
+.content{
+    padding: 20px;
+}
+
 @media screen and (max-width: 768px)
 {
     .member-tabset{
         background-color: black;
+    }
+    .content{
+        padding: 15px;
     }
 }
 
@@ -34,6 +46,18 @@
     .image_content{
         min-width: 100%;
         max-width: 100%;
+    }
+    .content{
+        padding: 10px;
+    }
+    .body_page{
+        margin: 0;
+    }
+    .content h5 h2{
+        text-align: center;
+    }
+    .heading{
+        text-align: center;
     }
 }
 
